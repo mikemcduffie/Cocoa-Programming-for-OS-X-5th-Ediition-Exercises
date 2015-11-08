@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="BusyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="checkButton" destination="Dax-FB-cID" id="yti-Sn-iXU"/>
+                <outlet property="hideSliderTicks" destination="Zw4-lP-6eY" id="ES3-Ws-Yhq"/>
+                <outlet property="pushMe" destination="A04-kz-Qv4" id="FU4-4n-TyH"/>
+                <outlet property="resetControls" destination="kB7-wT-je0" id="4Aq-Pg-yXP"/>
+                <outlet property="resetControlsPressed" destination="kB7-wT-je0" id="USu-sC-XD3"/>
+                <outlet property="revealMessage" destination="dn4-dE-kCz" id="x44-Ad-qsy"/>
+                <outlet property="revealedMessage" destination="e1b-uZ-t8T" id="HQa-Hz-RgJ"/>
+                <outlet property="secretMessage" destination="xLc-cu-UAb" id="y9X-Us-ex1"/>
+                <outlet property="showSliderTicks" destination="IHq-4o-44a" id="oju-Y8-Jxt"/>
+                <outlet property="slider" destination="uQf-qe-jel" id="gth-26-1jt"/>
+                <outlet property="sliderLabel" destination="v0s-U3-daw" id="EDt-Tj-zof"/>
+                <outlet property="window" destination="wJ5-vF-ny3" id="7bu-NV-wBP"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="BusyApp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="wJ5-vF-ny3">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <view key="contentView" id="Yxr-Wk-9IR">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQf-qe-jel">
+                        <rect key="frame" x="18" y="66" width="26" height="174"/>
+                        <animations/>
+                        <sliderCell key="cell" continuous="YES" alignment="left" maxValue="10" tickMarkPosition="right" numberOfTickMarks="11" allowsTickMarkValuesOnly="YES" sliderType="linear" id="jYd-fp-8Vt"/>
+                        <connections>
+                            <action selector="adjustSlider:" target="-2" id="eMX-oU-H7x"/>
+                        </connections>
+                    </slider>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kB7-wT-je0">
+                        <rect key="frame" x="14" y="15" width="130" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Reset Controls" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="agV-P5-YTN">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetControlsPressed:" target="-2" id="hzQ-66-etY"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="IHq-4o-44a">
+                        <rect key="frame" x="65" y="95" width="158" height="23"/>
+                        <animations/>
+                        <buttonCell key="cell" type="radio" title="Show slider tick marks" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="ngP-4a-kZD">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleTickMarks:" target="-2" id="CmD-g2-XH3"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zw4-lP-6eY">
+                        <rect key="frame" x="65" y="68" width="158" height="23"/>
+                        <animations/>
+                        <buttonCell key="cell" type="radio" title="Hide slider tick marks" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="JkE-6i-umO">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleTickMarks:" target="-2" id="pGW-70-wak"/>
+                        </connections>
+                    </button>
+                    <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="XTb-kE-IAd">
+                        <rect key="frame" x="248" y="12" width="5" height="246"/>
+                        <animations/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="oE8-N0-7t7">
+                        <rect key="frame" x="259" y="181" width="209" height="5"/>
+                        <animations/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dax-FB-cID">
+                        <rect key="frame" x="315" y="229" width="108" height="25"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="Check Me" alternateTitle="Uncheck Me" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ncx-K0-fLu">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLc-cu-UAb" customClass="NSSecureTextField">
+                        <rect key="frame" x="271" y="120" width="189" height="48"/>
+                        <animations/>
+                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="M27-O3-ZYX">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1b-uZ-t8T">
+                        <rect key="frame" x="271" y="20" width="189" height="48"/>
+                        <animations/>
+                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="mz9-xp-mJr">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dn4-dE-kCz">
+                        <rect key="frame" x="264" y="75" width="203" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Reveal the secret message" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WzL-hK-9fl">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="revealMessage:" target="-2" id="N8T-PU-zay"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v0s-U3-daw">
+                        <rect key="frame" x="73" y="120" width="140" height="107"/>
+                        <animations/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Slider is still!" id="5pZ-JY-OtU">
+                            <font key="font" metaFont="system" size="26"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A04-kz-Qv4">
+                        <rect key="frame" x="311" y="190" width="97" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Push Me!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cGN-QY-ckc">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pushMe:" target="-2" id="I13-0N-DfF"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3k7-Rj-66j">
+                        <rect key="frame" x="103" y="130" width="81" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="Hi Kyle!" alternateTitle="Bye Kyle!" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="AwU-F4-XIU">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+                <animations/>
+            </view>
+            <point key="canvasLocation" x="317" y="246"/>
+        </window>
+    </objects>
+</document>

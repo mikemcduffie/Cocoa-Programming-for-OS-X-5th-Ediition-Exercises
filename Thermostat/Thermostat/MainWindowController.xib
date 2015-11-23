@@ -68,7 +68,7 @@
                         </connections>
                     </button>
                     <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7iP-xh-IwO">
-                        <rect key="frame" x="46" y="40" width="20" height="255"/>
+                        <rect key="frame" x="46" y="40" width="21" height="255"/>
                         <animations/>
                         <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="u1i-bP-ARN">
                             <connections>
